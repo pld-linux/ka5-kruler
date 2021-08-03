@@ -37,6 +37,12 @@ your starting point (simple drag it), and read off the precise pixel
 count to your cursor. To change the length of the ruler just drag the
 sides.
 
+%description -l pl.UTF-8
+KRuler wyświetla na ekranie linijkę mierzącą liczbę pikseli. Ustaw 0
+w punkcie startowym (po prostu przeciągnij ją) i odczytaj precyzyjną
+liczbę pikseli do kursora. Aby zmienic długość linijki, przeciągnij
+jej boki.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
