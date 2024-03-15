@@ -1,31 +1,32 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kruler
 Summary:	kruler
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1abd8aa288fa40accfef2320bfb7e463
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	445618f69b0386a85d86daa3d4da56e0
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel >= 5.11.1
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Widgets-devel
+BuildRequires:	Qt5X11Extras-devel
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-kdoctools-devel >= %{kframever}
-BuildRequires:	kf6-ki18n-devel >= %{kframever}
-BuildRequires:	kf6-knotifications-devel >= %{kframever}
-BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
-BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kdoctools-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-knotifications-devel >= %{kframever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -75,8 +76,20 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kruler
 %{_desktopdir}/org.kde.kruler.desktop
-%{_iconsdir}/hicolor/*x*/apps/*.png
-%{_iconsdir}/hicolor/*x*/actions/*.png
-%{_datadir}/knotifications6/kruler.notifyrc
+%{_iconsdir}/hicolor/128x128/apps/kruler.png
+%{_iconsdir}/hicolor/16x16/actions/kruler-east.png
+%{_iconsdir}/hicolor/16x16/actions/kruler-north.png
+%{_iconsdir}/hicolor/16x16/actions/kruler-south.png
+%{_iconsdir}/hicolor/16x16/actions/kruler-west.png
+%{_iconsdir}/hicolor/16x16/apps/kruler.png
+%{_iconsdir}/hicolor/22x22/actions/kruler-east.png
+%{_iconsdir}/hicolor/22x22/actions/kruler-north.png
+%{_iconsdir}/hicolor/22x22/actions/kruler-south.png
+%{_iconsdir}/hicolor/22x22/actions/kruler-west.png
+%{_iconsdir}/hicolor/22x22/apps/kruler.png
+%{_iconsdir}/hicolor/32x32/apps/kruler.png
+%{_iconsdir}/hicolor/48x48/apps/kruler.png
+%{_iconsdir}/hicolor/64x64/apps/kruler.png
+%{_datadir}/knotifications5/kruler.notifyrc
 %{_datadir}/kruler
 %{_datadir}/metainfo/org.kde.kruler.appdata.xml
